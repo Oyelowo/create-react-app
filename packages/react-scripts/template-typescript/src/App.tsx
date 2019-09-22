@@ -16,7 +16,7 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Template Demo Modified by Oyelowo Oyedayo to include LESS and less module support
         </a>
       </header>
     </div>
