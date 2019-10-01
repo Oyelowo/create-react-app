@@ -256,7 +256,10 @@ function verifyTypeScriptSetup() {
   if (!fs.existsSync(paths.appTypeDeclarations)) {
     fs.writeFileSync(
       paths.appTypeDeclarations,
-      `/// <reference types="react-scripts" />${os.EOL}`
+      //`/// <reference types="react-scripts" />${os.EOL}`,
+      // @oyelowo/custom-react-scripts start
+      `/// <reference types="@oyelowo/custom-react-scripts" />${os.EOL}`
+      // @oyelowo/custom-react-scripts end
     );
   }
 }
