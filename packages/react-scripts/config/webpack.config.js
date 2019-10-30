@@ -127,6 +127,15 @@ module.exports = function(webpackEnv) {
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       },
+      // @oyelowo/custom-react-scripts start
+      // MY CUSTOM CHANGE
+      {
+        loader: require.resolve('less-loader'),
+        options: {
+          importLoaders: 1,
+        },
+      },
+      // @oyelowo/custom-react-scripts start
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push(
@@ -546,55 +555,6 @@ module.exports = function(webpackEnv) {
                 'sass-loader'
               ),
             },
-            // @oyelowo/custom-react-scripts start
-            // MY CUSTOM CHANGE
-            // Opt-in support for LESS (using less extensions).
-            {
-              test: lessRegex,
-              exclude: lessModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                },
-                'less-loader'
-              ),
-              // Don't consider CSS imports dead code even if the
-              // containing package claims to have no side effects.
-              // Remove this when webpack adds a warning or an error for this.
-              // See https://github.com/webpack/webpack/issues/6571
-              sideEffects: true,
-            },
-            // MY CUSTOM CHANGE
-            // Adds support for CSS Modules, but using LESS
-            // using the extension .module.less
-            // support importing less module without less ext. (.eg import s from '/App.module')
-            {
-              test: /^((?!\.module).)*less$/,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
-                },
-                'less-loader'
-              ),
-            },
-            {
-              test: lessModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
-                },
-                'less-loader'
-              ),
-            },
-            // @oyelowo/custom-react-scripts end
-
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
