@@ -565,22 +565,6 @@ module.exports = function(webpackEnv) {
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true,
             },
-            // MY CUSTOM CHANGE
-            // Adds support for CSS Modules, but using LESS
-            // using the extension .module.less
-            // support importing less module without less ext. (.eg import s from '/App.module')
-            {
-              test: /^((?!\.module).)*less$/,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
-                },
-                'less-loader'
-              ),
-            },
             {
               test: lessModuleRegex,
               use: getStyleLoaders(
