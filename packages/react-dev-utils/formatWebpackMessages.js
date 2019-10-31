@@ -83,6 +83,16 @@ function formatMessage(message) {
       'Run `npm install node-sass` or `yarn add node-sass` inside your workspace.';
   }
 
+  // @oyelowo/custom-react-scripts start
+  // MY CUSTOM CHANGE
+  // Add helpful message for users trying to use Sass for the first time
+  if (lines[1] && lines[1].match(/Cannot find module.+less/)) {
+    lines[1] = 'To import Less files, you first need to install less.\n';
+    lines[1] +=
+      'Run `npm install less` or `yarn add less` inside your workspace.';
+  }
+  // @oyelowo/custom-react-scripts start
+
   lines[0] = chalk.inverse(lines[0]);
 
   message = lines.join('\n');

@@ -16,6 +16,14 @@ To use Sass, first install `node-sass`:
 $ npm install node-sass --save
 $ # or
 $ yarn add node-sass
+
+To use Less, first install `less`:
+```
+
+```sh
+$ npm install less --save
+$ # or
+$ yarn add less
 ```
 
 Now you can rename `src/App.css` to `src/App.scss` and update `src/App.js` to import `src/App.scss`.
