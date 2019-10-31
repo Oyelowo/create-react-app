@@ -8,9 +8,11 @@ This package adds LESS and LESS module support to create-react-app 3.
 where ```test-app``` is the name of the project.
 
 - To use less:
+```
 $ npm install less --save
 $ # or
 $ yarn add less
+```
 
 Feel free to clone the repository [here](https://github.com/Oyelowo/create-react-app)
 
