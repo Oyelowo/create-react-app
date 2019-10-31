@@ -16,11 +16,23 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Template Demo Modified by Oyelowo Oyedayo to include LESS and less module support
+          Learn React Here
+        </a>
+
+        <p>
+          Template Demo Modified by Oyelowo Oyedayo to include LESS and less
+          module support. Feel free to contact me if you gave any question
+        </p>
+        <a href="https://www.linkedin.com/in/oyelowo-oyedayo/">
+          LinkedIn: Oyelowo Oyedayo
+        </a>
+
+        <a href="https://github.com/Oyelowo/create-react-app">
+          Clone the modified script from here
         </a>
       </header>
     </div>
   );
-}
+};
 
 export default App;
