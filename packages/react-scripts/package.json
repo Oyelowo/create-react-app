@@ -1,7 +1,7 @@
 {
   "name": "@oyelowo/custom-react-scripts",
   "version": "0.6.4",
-  "description": "Add LESS and LESS module support to Create React App",
+  "description": "Added LESS and LESS module support to Create React App",
   "repository": {
     "type": "git",
     "url": "https://github.com/Oyelowo/create-react-app.git",
